@@ -73,6 +73,8 @@ The figure also illustrates the use of a **null bitmap**, which indicates which 
 Databases often store data that can be much larger than a disk block. For instance, an image or an audio recording may be multiple megabytes in size, while a video object may be multiple gigabytes in size. Recall that SQL supports the types **blob** and **clob**, which store binary and character large objects.
 
 Most relational databases restrict the size of a record to be no larger than the size of a block, to simplify buffer management and free-space management. Large objects are often stored in a special file (or collection of files) instead of being stored with the other (short) attributes of records in which they occur. A (logical) pointer to the object is then stored in the record containing the large object. Large objects are often represented using $B^+$-tree file organizations. $B^+$-tree file organizations permits us to read the entire object, or specified byte ranges in the object, as well as to insert and delete parts of the object.
- 
+## Related Articles
+- [[Chapter 10 - Storage and File Structure]]
+  
 #interesting #low-level #memory #file-organization #pages #algorithms
 

@@ -65,4 +65,8 @@ Our use of clustering of multiple tables into a single file has enhanced process
 
 When multi-table clustering is to be used depends on the type of queries that the database designer believe to be most frequent. Careful use of multi-table clustering can produce significant performance gains in query processing.
 
+## Related Articles
+- [[Chapter 10 - Storage and File Structure]]
+
+
 #interesting #low-level #memory #file-organization #pages #algorithms

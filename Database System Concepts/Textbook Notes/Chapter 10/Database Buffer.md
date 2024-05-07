@@ -1,3 +1,12 @@
+---
+tags:
+  - low-level
+  - memory
+  - algorithms
+  - page-replacement-strategy
+  - block-replacement-strategy
+  - page-replacement-algorithms
+---
 A major goal of the database system is to minimize the number of block transfers between the disk and memory. One way to reduce the number of disk accesses is to keep as many blocks as possible in main memory. The goal is to maximize the chance that, when a block is accessed, it is already in main memory, and, thus, no disk access is required.
 
 Since it is not possible to keep all blocks in main memory, we need to manage the allocation of the space available in main memory for the storage of blocks. The **buffer** is that part of main memory available for storage of copies of disk blocks. There is always a copy kept on disk of every block, but the copy on disk may be a version of the block older than the version in the buffer. The subsystem responsible for the allocation of buffer space is called the **buffer manager**.
@@ -35,5 +44,3 @@ The strategy that the buffer manager uses for block replacement is influenced by
 The crash-recovery subsystem ([[Chapter 16]]) imposes stringent constraints on block replacement. If a block has been modified, the buffer manager is not allowed to write back the new version of the block in the buffer to disk, since that would destroy the old version. Instead, the block manager must seek permission from the crash-recovery subsystem before writing out a block. The crash-recovery subsystem may demand that certain other blocks be force-output before it grants permission to the buffer manager to output the block requested. In [[Chapter 16]], we define precisely the interaction between the buffer manager and the crash-recovery subsystem.
 ## Related Articles
 - [[Chapter 10 - Storage and File Structure]]
-
-#interesting #low-level #memory #algorithms #page-replacement-strategy #block-replacement-strategy #page-replacement-algorithms

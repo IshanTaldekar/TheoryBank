@@ -1,3 +1,12 @@
+---
+tags:
+  - interesting
+  - low-level
+  - memory
+  - file-organization
+  - pages
+  - algorithms
+---
 In [[File Organization]], we looked at how records are represented in a file structure within blocks. A relation is a set of records. Given a set of records, there are several ways of organizing them in a file:
 
 - ==**Heap file organization:** Any record can be placed anywhere in the file where there is space for the record. There is no ordering of records. Typically, there is a single file for each relation.==
@@ -67,6 +76,3 @@ When multi-table clustering is to be used depends on the type of queries that th
 
 ## Related Articles
 - [[Chapter 10 - Storage and File Structure]]
-
-
-#interesting #low-level #memory #file-organization #pages #algorithms

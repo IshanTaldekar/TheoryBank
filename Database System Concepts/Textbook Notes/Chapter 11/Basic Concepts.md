@@ -1,3 +1,7 @@
+---
+tags:
+  - interesting
+---
 ## Overview
 ==Many queries references only a small proportion of the records in a file.== For example, a query like "Find all instructors in the Physics department" or "Find the total number of credits earned by the student with *ID* 22201" references only a fraction of the student records. ==It is inefficient for the system to read every tuple in the *instructor* relation to check if the *dept_name* value is "Physics". Likewise, it is inefficient to read the entire *student* relation just to find the one tuple for the *ID* "32556".== Ideally, the system should be able to locate these records directly. To allow these forms of access, we design additional structures that we associate with files.
 ## Basic Concepts
@@ -37,5 +41,5 @@ We shall consider several techniques for both ordered indexing and hashing. No o
 We often want to have more than one index for a file. For example, we may wish to search for a book by author, by subject, or by title.
 
 ==An attribute or set of attributes used to look up records in a file is called a **search key**. Note that this definition of *key* differs from that used in *primary key*, *candidate key*, and *superkey*. This duplicate meaning for *key* is (unfortunately) well established in practice. Using our notion of a search key, we see that if there are several indices on a file, there are several search keys.==
-
-#interesting 
+## Related Articles
+- [[Chapter 11 - Indexing and Hashing]]

@@ -1,5 +1,14 @@
+---
+tags:
+  - interesting
+  - low-level
+  - memory
+  - file-organization
+  - pages
+  - algorithms
+---
 - A database is mapped into a number of different files that are maintained by the underlying operating system. These files reside permanently on disks. A **file** is organized logically as a sequence of records. These records are mapped onto [[Disk Blocks|disk blocks]]. Files are provided as a basic construct in operating systems, so we shall assume the existence of an underlying *file system*. 
-- Each file is also logically partitioned into a fixed-length storage units called **blocks**, which are **the units of both storage allocation and data transfer**. 
+- ==Each file is also logically partitioned into a fixed-length storage units called **blocks**, which are **the units of both storage allocation and data transfer**.== 
 - In the context of databases, *records* and *blocks* serve distinct purposes. Records refer to the logical units of data within a file. These are the individual pieces of data that the file contains. For example, in a database, each record might represent a single entry or row of information. Blocks, on the other hand, are physical units of storage on the disk. They represent the smallest amount of data that can be read from or written to the disk at one time. When a file is stored on disk, its records are typically divided into blocks to facilitate efficient storage and retrieval. 
 - ==A block may contain several records; the exact set of records that a block contains is determined by the form of physical data organization being used. We shall assume that *no record is larger than a block*. This assumption is realistic for most data-processing applications, such as our university example. We briefly discuss how to handle such large data items later, in Section 10.5.2, by storing large data items separately, and storing a pointer to the data item in the record.==
 - ==In addition, we shall require that *each record is entirely contained in a single block*; that is, no record is contained partly in one block, and partly in another. This restriction simplifies and speeds up access to data items.== 
@@ -75,6 +84,5 @@ Databases often store data that can be much larger than a disk block. For instan
 Most relational databases restrict the size of a record to be no larger than the size of a block, to simplify buffer management and free-space management. Large objects are often stored in a special file (or collection of files) instead of being stored with the other (short) attributes of records in which they occur. A (logical) pointer to the object is then stored in the record containing the large object. Large objects are often represented using $B^+$-tree file organizations. $B^+$-tree file organizations permits us to read the entire object, or specified byte ranges in the object, as well as to insert and delete parts of the object.
 ## Related Articles
 - [[Chapter 10 - Storage and File Structure]]
-  
-#interesting #low-level #memory #file-organization #pages #algorithms
+
 
